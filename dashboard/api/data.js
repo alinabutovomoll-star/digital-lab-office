@@ -22,7 +22,8 @@ async function sb(path) {
   const r = await fetch(`${process.env.SUPABASE_URL}/rest/v1/${path}`, {
     headers: {
       apikey: process.env.SUPABASE_SERVICE_KEY,
-      Authorization: `Bearer ${process.env.SUPABASE_SERVICE_KEY}`,
+      ...(process.env.SUPABASE_SERVICE_KEY.startsWith("eyJ")
+        ? { Authorization: `Bearer ${process.env.SUPABASE_SERVICE_KEY}` } : {}),
     },
   });
   if (!r.ok) throw new Error(`${path}: ${r.status} ${await r.text()}`);

@@ -22,7 +22,7 @@ async function sb(path: string, init: RequestInit = {}) {
   const r = await fetch(`${URL_}/rest/v1/${path}`, {
     ...init,
     headers: {
-      apikey: KEY!, Authorization: `Bearer ${KEY}`,
+      apikey: KEY!, ...(KEY!.startsWith("eyJ") ? { Authorization: `Bearer ${KEY}` } : {}),
       "Content-Type": "application/json", Prefer: "return=representation",
       ...(init.headers || {}),
     },
