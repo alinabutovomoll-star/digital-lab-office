@@ -10,6 +10,13 @@
 //   bun tools/tasks.ts due            — напоминания, которые пора отправить (и отметить отправленными)
 //   bun tools/tasks.ts note "текст"   — сохранить заметку / идею
 //   bun tools/tasks.ts notes          — последние заметки
+//   bun tools/tasks.ts say maxim "текст" [--file путь] [--typing]  — сообщение в рабочий чат от имени коллеги
+
+if (process.argv[2] === "say") {
+  process.argv.splice(2, 1);
+  await import("./say.ts");
+  process.exit(0);
+}
 
 const URL_ = process.env.SUPABASE_URL;
 const KEY = process.env.SUPABASE_SERVICE_KEY;
