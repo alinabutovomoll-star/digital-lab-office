@@ -3,4 +3,4 @@
 cd "$(dirname "$0")"
 git pull --quiet 2>/dev/null
 caffeinate -ims -w $$ &          # Mac не уснёт, пока офис работает
-claude --channels plugin:telegram@claude-plugins-official "Начни рабочий день"
+claude --model sonnet --channels plugin:telegram@claude-plugins-official "Начни рабочий день"
