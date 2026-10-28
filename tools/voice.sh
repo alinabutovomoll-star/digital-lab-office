@@ -3,6 +3,7 @@
 #   bash tools/voice.sh /путь/к/voice.oga
 # Один раз нужно установить: bash tools/voice.sh --install
 set -e
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"   # Homebrew, даже если Терминал открыт до его установки
 MODEL="$HOME/.whisper/ggml-small.bin"
 
 if [ "$1" = "--install" ]; then
