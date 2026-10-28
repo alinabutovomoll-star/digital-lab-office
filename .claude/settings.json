@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(bun tools/tasks.ts:*)",
+      "Bash(date:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "mcp__plugin_telegram_telegram",
+      "WebSearch",
+      "WebFetch"
+    ],
+    "deny": [
+      "Read(./.env)"
+    ]
+  }
+}

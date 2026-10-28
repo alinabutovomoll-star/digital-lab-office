@@ -1,5 +1,0 @@
-aiogram>=3.13
-anthropic>=0.40
-supabase>=2.8
-python-dotenv>=1.0
-openai>=1.50
